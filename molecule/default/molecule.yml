@@ -6,9 +6,9 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: instance
+  - name: debian
     image: debian
-  - name: instance
+  - name: raspbian
     image: raspbian/stretch
 provisioner:
   name: ansible
