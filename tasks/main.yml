@@ -7,7 +7,7 @@
 
 - import_tasks: hostname.yml
   become: "yes"
-  when: hostvars[inventory_hostname].ansible_connection != "docker"
+  when: hostvars[inventory_hostname].molecule_yml is not defined
 
 - import_tasks: ssh.yml
   become: "yes"
