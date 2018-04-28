@@ -1,5 +1,15 @@
 ---
+- hosts: all
+  tasks:
+  - name: ensure apt cache is up to date
+    apt:
+      update_cache: "yes"
+      cache_valid_time: 3600
+      force_apt_get: "yes"
+
 - name: Converge
   hosts: all
   roles:
     - role: common
+      ssh_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDG82PXibHpOeecVgwq8zAkLy1mFv0Dql4wF8mvJczseyM/xtIHBXXEfTwKoMWQmGom+6ajg6ORmms1qMdWC08E07N44OOmonqBa+tuZ3ADfG+AykUrGGrDukSR+vmm5Yd+hteSyiHlJ7GgGLLKOzPzM7DWyC7dsT8xb30kqVfvXSRIj6vq+eZieBSco0+8KurWNE1FYFc/H7JtFdm4PS2Y9f/q3GA1l5lbzUVhmq/ZhpZKN5e93l6yHmBtVkbIUxva+ubcKutykTtqNyBAzD7zO5imI94f9+vNquG50GuBZvkOhrjJ/Kh/+RflKvVB2A3b8iiWiJ7h/I3gr0l+vYvz geertweggemans@Geerts-MacBook-Pro-2.local

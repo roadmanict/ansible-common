@@ -1,4 +1,12 @@
 ---
+- name: ensure openssh-server is installed
+  apt:
+    name: "{{item}}"
+    state: present
+    force_apt_get: "yes"
+  with_items:
+    - openssh-server
+
 - name: Set authorized key took from file
   authorized_key:
     user: "{{ ansible_user | default('root') }}"
