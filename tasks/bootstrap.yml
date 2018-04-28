@@ -8,6 +8,7 @@
     - git
     - python-minimal
     - acl
+    - dbus
 
 - name: Add sudoers to /etc/nsswitch.conf
   lineinfile:
